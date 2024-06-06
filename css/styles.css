@@ -1,0 +1,419 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-weight: 400;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #ccffe3;
+}
+
+@media (max-width: 992px) {
+  :root {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============ Grid ============ */
+.container-fluid {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (max-width: 992px) {
+  .container-fluid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.row {
+  --bs-gutter-x: 1rem;
+}
+
+/* ============ Header ============ */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--secondary-color);
+  height: 5rem;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  z-index: 10;
+}
+
+@media (max-width: 992px) {
+  header {
+    padding: 0 1.5rem;
+  }
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+header nav ul li {
+  margin-left: 1.5rem;
+}
+
+@media (max-width: 576px) {
+  header nav ul li {
+    margin-left: 1rem;
+  }
+}
+
+header nav ul li a {
+  transition: border 0.1s;
+}
+
+header nav ul li a:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* ============ Main ============ */
+main {
+  margin-top: 5rem;
+  min-height: calc(100vh - 8rem);
+}
+
+main.work {
+  padding-top: 2rem;
+}
+
+main.about {
+  padding: 2rem 0;
+}
+
+main.single {
+  padding: 2rem 0;
+}
+
+@media (max-width: 992px) {
+  main.work {
+    padding-top: 1.5rem;
+  }
+
+  main.about {
+    padding: 1.5rem 0;
+  }
+
+  main.single {
+    padding: 1.5rem 0;
+  }
+}
+
+/* ============ Home ============ */
+
+.home-slider {
+  height: calc(100vh - 8rem);
+}
+
+.home-slider-item {
+  height: calc(100vh - 8rem);
+  background-position: center;
+  background-size: cover;
+}
+
+/* ============ Work * Card ============ */
+
+.work .card {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .work .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.work .card:hover .card-image {
+  box-shadow: 0.3rem 0.3rem 0.3rem var(--secondary-color);
+}
+
+.work .card-image {
+  width: 100%;
+  padding-bottom: 60%;
+  background-image: url("../img/lemon-mike-dorner.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+
+@media (max-width: 992px) {
+  .work .card-image {
+    margin-bottom: 1rem;
+  }
+}
+
+.work .card-title {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .work .card-title {
+    font-size: 2rem;
+  }
+}
+
+.work .card-text {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .work .card-text {
+    font-size: 1rem;
+  }
+}
+
+/* ============ About ============ */
+
+.about section + section {
+  border-top: 1px solid var(--primary-color);
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+@media (max-width: 992px) {
+  .about section + section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+.about-text,
+.about-subtitle {
+  font-size: 2.5rem;
+}
+
+.about-subtitle {
+  position: sticky;
+  top: 7rem;
+}
+
+@media (max-width: 992px) {
+  .about-text,
+  .about-subtitle {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .about-subtitle {
+    margin-bottom: 1rem;
+  }
+}
+
+.about-list {
+  list-style: none;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .about-list {
+    font-size: 1rem;
+  }
+}
+
+.about-list + .about-list {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 576px) {
+  .about-form {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.about-form input {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  height: 4rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .about-form input {
+    height: 3rem;
+    font-size: 1rem;
+  }
+}
+
+.about-form textarea {
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  height: 12rem;
+  padding: 1rem;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .about-form textarea {
+    height: 9rem;
+    font-size: 1rem;
+  }
+}
+
+.about-form input[type="submit"] {
+  background-color: transparent;
+  border-radius: 4rem;
+  margin-bottom: 0;
+}
+
+.about-map {
+  height: 100%;
+}
+
+.about-map iframe {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+}
+
+@media (max-width: 576px) {
+  .about-map {
+    height: 18rem;
+  }
+}
+
+/* ============ Single ============ */
+
+.single-info {
+  position: sticky;
+  top: 7rem;
+}
+
+@media (max-width: 992px) {
+  .single-info {
+    top: 6.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .single-info {
+    position: static;
+  }
+}
+
+.single-title {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+  .single-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.single-tagline {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  .single-tagline {
+    margin-bottom: 1rem;
+  }
+
+  .single-text {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.single-images {
+  list-style: none;
+}
+
+.single-image + .single-image {
+  margin-top: 1rem;
+}
+
+.single-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============ Footer ============ */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 3rem;
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 992px) {
+  footer {
+    padding: 0 1.5rem;
+  }
+}
+
+footer nav ul {
+  display: flex;
+  list-style: none;
+}
+
+footer nav ul li {
+  margin-left: 1rem;
+}
+
+footer nav ul li img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
